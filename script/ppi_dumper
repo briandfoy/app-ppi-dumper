@@ -7,27 +7,18 @@ $VERSION = "0.10_01";
 
 =head1 NAME
 
-App::PPI::Dumper - Use the PPI to dump the structure of a Perl file
+ppi_dumper - Use the PPI to dump the structure of a Perl file
 
 =head1 SYNOPSIS
 
-	use App::PPI::Dumper;
-	
-	App::PPI::Dumper->run( @ARGV );
+	$ ppi_version [-mPTWClr] [-i N] input_file
 	
 =head1 DESCRIPTION
 
 Parse a Perl document with PPI and dump the Perl Document Object Model (PDOM). 
 This script is a command-line interface to PPI::Dumper.
 
-=head2 Methods
-
-=over 4 
-
-=item run( OPTIONS, INPUT_FILE )
-
-Parse INPUT_FILE with the given PPI::Dumper options, then print the result to
-standard output.
+=head1 OPTIONS
 
 =over 4
 
@@ -65,8 +56,6 @@ Parse the input in readonly mode. See PPI::Document::new() for the details.
 
 =back
 
-=back
-
 =head1 SEE ALSO
 
 Most behaviour, including environment variables and configuration,
@@ -90,53 +79,10 @@ You may redistribute this under the same terms as Perl itself.
 
 =cut
 
-use Getopt::Std qw(getopts);
-use PPI;
-use PPI::Dumper;
+use App::PPI::Dumper;
 
-__PACKAGE__->run(@ARGV) unless caller;
+App::PPI::Dumper->run(@ARGV);
 
-# same defaults as PPI::Dumper
-sub run 
-	{
-	my $self = shift;
-	
-	local @ARGV = @_;
-	
-	my %opts = (
-		'm' => 0, # memaddr
-		'i' => 2, # indent
-		'P' => 0, # class
-		'D' => 0, # content
-		'W' => 0, # whitespace
-		'C' => 0, # comments
-		'l' => 0, # locations
-		'r' => 0, # read-only, for PPI::Document
-		);
-		
-	getopts('mPDWCli:', \%opts);
-	
-#	print Dumper( \%opts ); use Data::Dumper;
-	
-	my $Module = PPI::Document->new( 
-		$ARGV[0],
-		readonly => $opts{'r'},
-		);
-	
-	die "Could not parse [$ARGV[0]] for PPI: " . PPI::Document->errstr . "\n" 
-		if PPI::Document->errstr;
-	
-	my $Dumper = PPI::Dumper->new( $Module,
-		memaddr    =>   $opts{'m'},
-		indent     =>   $opts{'i'},
-		class      => ! $opts{'P'},
-		content    => ! $opts{'D'},
-		whitespace => ! $opts{'W'},
-		comments   => ! $opts{'C'},
-		locations  =>   $opts{'l'},
-		);
-	
-	$Dumper->print;
-	}
+
 
 __END__

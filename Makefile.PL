@@ -19,6 +19,8 @@ WriteMakefile(
 		'lib/Dumper.pm'         => '$(INST_LIBDIR)/Dumper.pm',
 		},
 
+	'EXE_FILES'    => [ 'script/ppi_dumper' ],
+	
 	'MAN3PODS'     => {
 		'lib/Dumper.pm' => '$(INST_MAN3DIR)/App::PPI::Dumper.3',
 		},
