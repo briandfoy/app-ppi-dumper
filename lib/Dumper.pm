@@ -1,0 +1,127 @@
+#!/usr/bin/perl
+package App::PPI::Dumper;
+
+=head1 NAME
+
+ppi_dumper - Use the PPI to dump the structure of a Perl file
+
+=head1 SYNOPSIS
+
+	$ ppi_dumper [-mPTWClr] [-i N] directory
+	
+=head1 DESCRIPTION
+
+Parse a Perl document with PPI and dump the Perl Document Object Model (PDOM). 
+This script is a command-line interface to PPI::Dumper.
+
+=head2
+
+=over 4
+
+=item -m 
+
+Show the memory address of each PDOM element. 
+
+=item -i N
+
+Ident each level of output by N spaces. The default is 2.
+	
+=item -P
+
+Do not show the full package name for each PPI class.
+
+=item -T
+
+Do not show the original source token that goes with each PPI object.
+
+=item -W 
+
+Do not show whitespace tokens
+
+=item -C
+
+Do not show comment tokens
+
+=item -l 
+
+Show the source code location of each PPI token.
+
+=item -r 
+
+Parse the input in readonly mode. See PPI::Document::new() for the details.
+
+=back
+
+=head1 SEE ALSO
+
+Most behaviour, including environment variables and configuration,
+comes directly from PPI::Dumper. I just made a command-line tool for it.
+
+=head1 SOURCE AVAILABILITY
+
+This code is in Github:
+
+        git://github.com/briandfoy/cpan_script.git
+
+=head1 AUTHOR
+
+brian d foy, C<< <bdfoy@cpan.org> >>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2009, brian d foy, All Rights Reserved.
+
+You may redistribute this under the same terms as Perl itself.
+
+=cut
+
+use Getopt::Std qw(getopts);
+use PPI;
+use PPI::Dumper;
+
+__PACKAGE__->run(@ARGV) unless caller;
+
+# same defaults as PPI::Dumper
+sub run 
+	{
+	my $self = shift;
+	
+	local @ARGV = @_;
+	
+	my %opts = (
+		'm' => 0, # memaddr
+		'i' => 2, # indent
+		'P' => 1, # class
+		'D' => 1, # content
+		'W' => 1, # whitespace
+		'C' => 1, # comments
+		'l' => 0, # locations
+		'r' => 0, # read-only, for PPI::Document
+		);
+		
+	getopts('mPDWCli:', \%opts);
+	
+#	print Dumper( \%opts ); use Data::Dumper;
+	
+	my $Module = PPI::Document->new( 
+		$ARGV[0],
+		readonly => $opts{'r'},
+		);
+	
+	die "Could not parse [$ARGV[0]] for PPI: " . PPI::Document->errstr . "\n" 
+		if PPI::Document->errstr;
+	
+	my $Dumper = PPI::Dumper->new( $Module,
+		memaddr    => $opts{'m'},
+		indent     => $opts{'i'},
+		class      => $opts{'p'},
+		content    => $opts{'d'},
+		whitespace => $opts{'w'},
+		comments   => $opts{'c'},
+		locations  => $opts{'l'},
+		);
+	
+	$Dumper->print;
+	}
+
+__END__
