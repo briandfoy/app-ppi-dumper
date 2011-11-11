@@ -15,8 +15,8 @@ ppi_dumper - Use the PPI to dump the structure of a Perl file
 	
 =head1 DESCRIPTION
 
-Parse a Perl document with PPI and dump the Perl Document Object Model (PDOM). 
-This script is a command-line interface to PPI::Dumper.
+Parse a Perl document with PPI and dump the Perl Document Object Model
+(PDOM). This script is a command-line interface to PPI::Dumper.
 
 =head1 OPTIONS
 
@@ -52,7 +52,8 @@ Show the source code location of each PPI token.
 
 =item -r 
 
-Parse the input in readonly mode. See PPI::Document::new() for the details.
+Parse the input in readonly mode. See PPI::Document::new() for the
+details.
 
 =back
 
@@ -82,7 +83,6 @@ You may redistribute this under the same terms as Perl itself.
 use App::PPI::Dumper;
 
 App::PPI::Dumper->run(@ARGV);
-
 
 
 __END__

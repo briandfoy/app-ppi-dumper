@@ -97,8 +97,7 @@ use PPI::Dumper;
 __PACKAGE__->run(@ARGV) unless caller;
 
 # same defaults as PPI::Dumper
-sub run 
-	{
+sub run {
 	my $self = shift;
 	
 	local @ARGV = @_;
@@ -138,5 +137,7 @@ sub run
 	
 	$Dumper->print;
 	}
+
+1;
 
 __END__
