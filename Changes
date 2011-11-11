@@ -1,0 +1,4 @@
+0.11 - Fri Nov 11 17:51:42 2011
+	* Update the Pod to get the right App name
+	* Various other dist maintenance, but no code changes
+
