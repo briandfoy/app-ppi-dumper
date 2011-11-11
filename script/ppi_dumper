@@ -11,7 +11,7 @@ ppi_dumper - Use the PPI to dump the structure of a Perl file
 
 =head1 SYNOPSIS
 
-	$ ppi_version [-mPTWClr] [-i N] input_file
+	$ ppi_dumper [-mPTWClr] [-i N] input_file
 	
 =head1 DESCRIPTION
 
