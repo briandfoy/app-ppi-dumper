@@ -3,7 +3,7 @@ package App::PPI::Dumper;
 
 use vars qw($VERSION);
 
-$VERSION = "0.10_01";
+$VERSION = "0.11";
 
 =head1 NAME
 
