@@ -6,16 +6,17 @@ eval "use Test::Manifest 1.21";
 
 WriteMakefile(
 	'NAME'	       => 'App::PPI::Dumper',
-	'ABSTRACT'     => 'This is what the module does',
+	'ABSTRACT'     => 'Use the PPI to dump the structure of a Perl file',
 	'VERSION_FROM' => 'lib/App/PPI/Dumper.pm',
 	'LICENSE'      => 'perl',
 	'AUTHOR'       => 'brian d foy <bdfoy@cpan.org>',
 	
 	'PREREQ_PM'    => { 
-		'Test::More'  => '0',
-		'Getopt::Std' => '0',
-		'PPI'         => '0',
-		'PPI::Dumper' => '0',
+		'Getopt::Std'  => '0',
+		'PPI::Dumper'  => '0',
+		'PPI'          => '0',
+		'Test::More'   => '0',
+		'Test::Output' => '0',
 		},
 
 	'EXE_FILES'    => [ 'script/ppi_dumper' ],
