@@ -115,8 +115,6 @@ sub run {
 		
 	getopts('mPDWCli:', \%opts);
 	
-#	print Dumper( \%opts ); use Data::Dumper;
-	
 	my $Module = PPI::Document->new( 
 		$ARGV[0],
 		readonly => $opts{'r'},
