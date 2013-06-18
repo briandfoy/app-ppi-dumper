@@ -2,6 +2,9 @@
 	* Update the Pod to get the right App name
 	* Various other dist maintenance, but no code changes
 
+1.01 - Tue Jun 18 04:27:25 2013
+	* Update and clean up distro. There are no code changes.
+
 0.12 - Thu Nov 24 11:38:15 2011
 	* Added missing Test::Output prereq.
 	* No code changes.
