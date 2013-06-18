@@ -10,8 +10,8 @@ WriteMakefile(
 	'VERSION_FROM' => 'lib/App/PPI/Dumper.pm',
 	'LICENSE'      => 'perl',
 	'AUTHOR'       => 'brian d foy <bdfoy@cpan.org>',
-	
-	'PREREQ_PM'    => { 
+
+	'PREREQ_PM'    => {
 		'Getopt::Std'  => '0',
 		'PPI::Dumper'  => '0',
 		'PPI'          => '0',
@@ -20,7 +20,7 @@ WriteMakefile(
 		},
 
 	'EXE_FILES'    => [ 'script/ppi_dumper' ],
-	
+
 	clean  => { FILES    => q|App-PPI-Dumper-*| },
 
 	);

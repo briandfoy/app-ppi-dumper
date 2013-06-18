@@ -21,18 +21,18 @@ my @regressions = (
 	[ [ qw(-i 1 corpus/hello.pl) ], qw(regression/hello-i1.pl) ],
 	[ [ qw(-i 3 corpus/hello.pl) ], qw(regression/hello-i3.pl) ],
 	[ [ qw(-l corpus/hello.pl) ],   qw(regression/hello-l.pl) ],
-	);	
+	);
 
 foreach my $regression ( @regressions )
 	{
 	my( $argv, $output_file ) = @$regression;
-	
+
 	ok( -e $argv->[-1], "Input file $argv->[-1] exists" );
-	
+
 	my $basename = basename( $argv->[-1] );
-	
+
 	ok( -e $output_file, "Regression file $output_file exists" );
-	
+
 	my $expected_output = do { local( @ARGV, $/ ) = $output_file; <> };
 
 	stdout_is(
