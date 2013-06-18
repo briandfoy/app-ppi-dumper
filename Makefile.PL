@@ -16,7 +16,7 @@ WriteMakefile(
 		'Getopt::Std'  => '0',
 		'PPI::Dumper'  => '0',
 		'PPI'          => '0',
-		'Test::More'   => '0',
+		'Test::More'   => '0.95',
 		'Test::Output' => '0',
 		},
 
