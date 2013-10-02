@@ -1,4 +1,4 @@
-use ExtUtils::MakeMaker 6.46;
+use ExtUtils::MakeMaker 6.48;
 
 require 5.010;
 
@@ -12,7 +12,7 @@ WriteMakefile(
 	'AUTHOR'       => 'brian d foy <bdfoy@cpan.org>',
 
 	'PREREQ_PM'    => {
-		'ExtUtils::MakeMaker' => '6.46',
+		'ExtUtils::MakeMaker' => '6.48',
 		'Getopt::Std'  => '0',
 		'PPI::Dumper'  => '0',
 		'PPI'          => '0',
@@ -29,5 +29,4 @@ WriteMakefile(
 	'EXE_FILES'    => [ 'script/ppi_dumper' ],
 
 	clean  => { FILES    => q|App-PPI-Dumper-*| },
-
 	);
