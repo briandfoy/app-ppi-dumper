@@ -1,4 +1,4 @@
-# Changes to App::PPI::Dumper
+Revision history for Perl module App::PPI::Dumper
 
 1.02 - Wed Oct  2 16:34:31 2013
 	* Ignore MYMETA files RT #89163
