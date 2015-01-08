@@ -1,10 +1,12 @@
 require 5.010;
+
+package App::PPI::Dumper;
 use strict;
 use warnings;
 
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'App::PPI::Dumper';
+my $module    = __PACKAGE__;
 my $github    = 'https://github.com/briandfoy/app-ppi-dumper';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
@@ -18,7 +20,8 @@ my %WriteMakefile = (
 	'EXE_FILES'    => [ 'script/ppi_dumper' ],
 
 	'CONFIGURE_REQUIRES' => {
-		'ExtUtils::MakeMaker' => '6.64',
+		'ExtUtils::MakeMaker'   => '6.64',
+		'File::Spec::Functions' => '0',
 		},
 
 	'BUILD_REQUIRES' => {
