@@ -1,13 +1,15 @@
+require 5.010;
 use strict;
 use warnings;
 
-require 5.010;
+use File::Spec::Functions qw(catfile);
 
-my $github    = 'https://github.com/briandfoy/';
-my $main_file = 'lib/App/PPI/Dumper.pm';
+my $module    = 'App::PPI::Dumper';
+my $github    = 'https://github.com/briandfoy/app-ppi-dumper';
+my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
 my %WriteMakefile = (
-	'NAME'	        => 'App::PPI::Dumper',
+	'NAME'	        => $module,
 	'ABSTRACT_FROM' => $main_file,
 	'VERSION_FROM'  => $main_file,
 	'LICENSE'       => 'perl',
