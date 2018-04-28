@@ -2,6 +2,16 @@
 
 =encoding utf8
 
+=for HTML <a href="https://travis-ci.org/briandfoy/app-ppi-dumper"><img src="https://travis-ci.org/briandfoy/app-ppi-dumper.svg?branch=master" /></a>
+
+=for HTML <a href='https://ci.appveyor.com/project/briandfoy/app-ppi-dumper'><img src='https://ci.appveyor.com/api/projects/status/7frfy5kdtyxfij5g' /></a>
+
+=for HTML <a href='https://coveralls.io/github/briandfoy/app-ppi-dumper?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/app-ppi-dumper/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+=for HTML <a href="https://github.com/briandfoy/app-ppi-dumper/blob/master/LICENSE"><img src="https://img.shields.io/cpan/l/App-PPI-Dumper.svg" /></a>
+
+=for HTML <a href="http://www.metacpan.org/module/App::PPI::Dumper"><img src="https://img.shields.io/cpan/v/App-PPI-Dumper.svg" /></A>
+
 =head1 The App::PPI::Dumper module
 
 This is the I<README> for the L<App::PPI::Dumper> Perl module. You're probably 
