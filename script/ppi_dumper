@@ -62,7 +62,8 @@ details.
 =head1 SEE ALSO
 
 Most behaviour, including environment variables and configuration,
-comes directly from PPI::Dumper. I just made a command-line tool for it.
+comes directly from L<PPI::Dumper>. I just made a command-line tool
+for it.
 
 =head1 SOURCE AVAILABILITY
 
