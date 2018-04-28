@@ -1,8 +1,6 @@
 package App::PPI::Dumper;
 
-use vars qw($VERSION);
-
-$VERSION = "1.02";
+our $VERSION = "1.021";
 
 =encoding utf8
 
