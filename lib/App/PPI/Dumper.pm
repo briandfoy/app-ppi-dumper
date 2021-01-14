@@ -1,6 +1,6 @@
 package App::PPI::Dumper;
 
-our $VERSION = "1.021";
+our $VERSION = "1.022";
 
 =encoding utf8
 
