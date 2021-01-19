@@ -75,7 +75,7 @@ comes directly from PPI::Dumper. I just made a command-line tool for it.
 
 This code is in Github:
 
-	git://github.com/briandfoy/app-ppi-dumper.git
+	https://github.com/briandfoy/app-ppi-dumper.git
 
 =head1 AUTHOR
 
