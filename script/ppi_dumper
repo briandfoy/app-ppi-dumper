@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 package App::PPI::Dumper;
 
-use vars qw($VERSION);
-
-$VERSION = "1.011";
+our $VERSION = "1.011";
 
 =encoding utf8
 
